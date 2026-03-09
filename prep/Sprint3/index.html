@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    
+    <form>
+        <label for="message">Your message</label>
+        <br>
+        <textarea name="message" id="message" maxlength="200" rows="5"></textarea>
+        <p>You have <span class="remainingChar">200</span> characters remaining</p>
+    </form>
+
+
+    <script>
+        let remainingChar = document.querySelector('.remainingChar');
+        let txtarea = document.getElementById('message');
+
+        function updateCharacterLimit() {
+            const length = txtarea.value.length;
+            remainingChar.textContent = 200 - length;
+    
+            remainingChar.style.color = (length >= 180) ? 'red' : 'black';
+        }
+
+        txtarea.addEventListener('keyup', updateCharacterLimit);
+
+
+        
+        
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
